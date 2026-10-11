@@ -1,0 +1,45 @@
+output "logging_billing_account_sinks_id" {
+  description = "Map of id values across all logging_billing_account_sinks, keyed the same as var.logging_billing_account_sinks except keys with no id are omitted"
+  value       = { for k, v in google_logging_billing_account_sink.logging_billing_account_sinks : k => v.id if v.id != null && length(v.id) > 0 }
+}
+output "logging_billing_account_sinks_bigquery_options" {
+  description = "Map of bigquery_options values across all logging_billing_account_sinks, keyed the same as var.logging_billing_account_sinks except keys with no bigquery_options are omitted"
+  value       = { for k, v in google_logging_billing_account_sink.logging_billing_account_sinks : k => one(v.bigquery_options) if v.bigquery_options != null && length(v.bigquery_options) > 0 }
+}
+output "logging_billing_account_sinks_billing_account" {
+  description = "Map of billing_account values across all logging_billing_account_sinks, keyed the same as var.logging_billing_account_sinks except keys with no billing_account are omitted"
+  value       = { for k, v in google_logging_billing_account_sink.logging_billing_account_sinks : k => v.billing_account if v.billing_account != null && length(v.billing_account) > 0 }
+}
+output "logging_billing_account_sinks_deletion_policy" {
+  description = "Map of deletion_policy values across all logging_billing_account_sinks, keyed the same as var.logging_billing_account_sinks except keys with no deletion_policy are omitted"
+  value       = { for k, v in google_logging_billing_account_sink.logging_billing_account_sinks : k => v.deletion_policy if v.deletion_policy != null && length(v.deletion_policy) > 0 }
+}
+output "logging_billing_account_sinks_description" {
+  description = "Map of description values across all logging_billing_account_sinks, keyed the same as var.logging_billing_account_sinks except keys with no description are omitted"
+  value       = { for k, v in google_logging_billing_account_sink.logging_billing_account_sinks : k => v.description if v.description != null && length(v.description) > 0 }
+}
+output "logging_billing_account_sinks_destination" {
+  description = "Map of destination values across all logging_billing_account_sinks, keyed the same as var.logging_billing_account_sinks except keys with no destination are omitted"
+  value       = { for k, v in google_logging_billing_account_sink.logging_billing_account_sinks : k => v.destination if v.destination != null && length(v.destination) > 0 }
+}
+output "logging_billing_account_sinks_disabled" {
+  description = "Map of disabled values across all logging_billing_account_sinks, keyed the same as var.logging_billing_account_sinks except keys with no disabled are omitted"
+  value       = { for k, v in google_logging_billing_account_sink.logging_billing_account_sinks : k => v.disabled if v.disabled != null }
+}
+output "logging_billing_account_sinks_exclusions" {
+  description = "Map of exclusions values across all logging_billing_account_sinks, keyed the same as var.logging_billing_account_sinks except keys with no exclusions are omitted"
+  value       = { for k, v in google_logging_billing_account_sink.logging_billing_account_sinks : k => v.exclusions if v.exclusions != null && length(v.exclusions) > 0 }
+}
+output "logging_billing_account_sinks_filter" {
+  description = "Map of filter values across all logging_billing_account_sinks, keyed the same as var.logging_billing_account_sinks except keys with no filter are omitted"
+  value       = { for k, v in google_logging_billing_account_sink.logging_billing_account_sinks : k => v.filter if v.filter != null && length(v.filter) > 0 }
+}
+output "logging_billing_account_sinks_name" {
+  description = "Map of name values across all logging_billing_account_sinks, keyed the same as var.logging_billing_account_sinks except keys with no name are omitted"
+  value       = { for k, v in google_logging_billing_account_sink.logging_billing_account_sinks : k => v.name if v.name != null && length(v.name) > 0 }
+}
+output "logging_billing_account_sinks_writer_identity" {
+  description = "Map of writer_identity values across all logging_billing_account_sinks, keyed the same as var.logging_billing_account_sinks except keys with no writer_identity are omitted"
+  value       = { for k, v in google_logging_billing_account_sink.logging_billing_account_sinks : k => v.writer_identity if v.writer_identity != null && length(v.writer_identity) > 0 }
+}
+
